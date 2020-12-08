@@ -13,10 +13,12 @@ class Actor(ABC):
     # The collect() and pay() methods are used for many types of transactions between actors (rent, salaries, etc.)
 
     def collect(self, other, amount):
+        """Transfer money from another actor to self."""
         self.balance += amount
         other.balance -= amount
     
     def pay(self, other, amount):
+        """Transfer money to another actor from self."""
         self.balance -= amount
         other.balance += amount
 

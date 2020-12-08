@@ -10,12 +10,15 @@ class Property:
         self.buildings = 0
 
     def buy_property(self):
+        """Change ownership status to True when buying property."""
         self.owned = True
 
     def sell_property(self):
+        """Change ownership status to False when selling property."""
         self.owned = False
     
     def update_rent(self, buy = True):
+        """Double the rent if buying a property, otherwise halve the rent if selling."""
         if buy:
             self.rent *= 2
         else:
@@ -24,9 +27,11 @@ class Property:
     # For the purposes of rent, a hotel is equivalent to 5 houses
 
     def add_building(self):
+        """Increment the building count and double the rent."""
         self.buildings += 1
         self.update_rent()
 
     def remove_building(self):
+        """Decrement the building count and halve the rent."""
         self.buildings -= 1
         self.update_rent(False)
