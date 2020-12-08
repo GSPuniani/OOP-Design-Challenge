@@ -1,4 +1,4 @@
-# Run this file for actual gameplay
+# Run this file to simulate gameplay
 
 from player import Player
 from bank import Bank
