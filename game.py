@@ -49,7 +49,9 @@ print("\nGobind:")
 gobind.move_token()
 # Buy the property
 gobind_purchase1 = monopoly.show_property(gobind.position)
-gobind_purchase1.buy_property(gobind)
+# Check if anyone owns it first
+if gobind_purchase1.owned == False:
+    gobind_purchase1.buy_property(gobind)
 gobind.pay(bank, gobind_purchase1.price)
 print(gobind.position)
 print("Gobind's properties:")
