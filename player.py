@@ -9,16 +9,18 @@ class Player(Actor):
         Every player begins with $1500, 0 houses, and 0 hotels at the start of the game."""
         super().__init__(1500)
         self.token = token
+        self.position = 0
 
     # The collect() and pay() methods from Actor are also inherited
     
     def roll_dice(self):
-        # Roll two standard dice
+        """Roll two standard dice. Return a tuple of the roll"""
         die1 = random.randint(1, 6)
         die2 = random.randint(1, 6)
         print(f"{die1}, {die2}")
         if die1 == die2:
             print("Doubles!")
+        return (die1, die2)
 
     def sell_building(self, other, building = "house"):
         """Sell some number of houses or hotels back to the bank.
@@ -33,5 +35,11 @@ class Player(Actor):
             self.houses += 4
         self.balance += 50
         other.balance -= 50
+
+    # Move token
+    def move_token(self):
+        self.position += sum(self.roll_dice())
+        # if self.position > # of properties, self.position = mod (# of properties)
+        # If double roll, roll again (check if each element of the tuple is the same value)
 
     
