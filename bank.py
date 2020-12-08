@@ -22,6 +22,7 @@ class Bank(Actor):
             self.hotels -= 1
             other.hotels += 1
             other.houses -= 4
+            self.hotels += 4
         self.balance += 100
         other.balance -= 100
 

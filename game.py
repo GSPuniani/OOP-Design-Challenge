@@ -37,6 +37,8 @@ adriana = Player("Battleship")
 meredith = Player("Shoe")
 mitchell = Player("Top Hat")
 
+print(f"Initial balances of all players: ${joi.balance}, ${adriana.balance}, ${meredith.balance}, ${mitchell.balance}")
+
 # Instantiate bank
 bank = Bank()
 

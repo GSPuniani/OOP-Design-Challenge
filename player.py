@@ -33,13 +33,22 @@ class Player(Actor):
             self.hotels -= 1
             other.hotels += 1
             self.houses += 4
+            other.houses -= 4
         self.balance += 50
         other.balance -= 50
 
     # Move token
     def move_token(self):
-        self.position += sum(self.roll_dice())
-        # if self.position > # of properties, self.position = mod (# of properties)
-        # If double roll, roll again (check if each element of the tuple is the same value)
+        """Advance token by number indicated in dice roll. Reset position as the token completes a circuit.
+        A double roll begets another turn rolling the dice."""
+        # `roll` is a tuple with two values from the dice roll
+        roll = self.roll_dice()
+        self.position += sum(roll)
+        # Change position by mod 22 so that position resets upon passing all properties
+        if self.position > 22:
+            self.position %= 22
+        # If double roll (dice show same value), roll again by calling this function (recursion)
+        if roll[0] == roll[1]:
+            self.move_token()
 
     
