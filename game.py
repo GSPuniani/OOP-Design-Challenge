@@ -33,18 +33,62 @@ monopoly.add_property("Boardwalk", "Dark Blue", 400)
 
 # Instantiate players
 joi = Player("Race Car")
-adriana = Player("Battleship")
-meredith = Player("Shoe")
-mitchell = Player("Top Hat")
+gobind = Player("Battleship")
 
-print(f"Initial balances of all players: ${joi.balance}, ${adriana.balance}, ${meredith.balance}, ${mitchell.balance}")
+print(f"Initial balances of all players: ${joi.balance}, ${gobind.balance}")
 
 # Instantiate bank
 bank = Bank()
 
+print("\nJoi:")
 joi.move_token()
 monopoly.show_property(joi.position)
 print(joi.position)
+
+print("\nGobind:")
+gobind.move_token()
+monopoly.show_property(gobind.position)
+print(gobind.position)
+
+print("\nJoi:")
+joi.move_token()
+monopoly.show_property(joi.position)
+print(joi.position)
+
+print("\nGobind:")
+gobind.move_token()
+monopoly.show_property(gobind.position)
+print(gobind.position)
+
+print("\nJoi:")
+joi.move_token()
+monopoly.show_property(joi.position)
+print(joi.position)
+
+print("\nGobind:")
+gobind.move_token()
+monopoly.show_property(gobind.position)
+print(gobind.position)
+
+print("\nJoi:")
+joi.move_token()
+monopoly.show_property(joi.position)
+print(joi.position)
+
+print("\nGobind:")
+gobind.move_token()
+monopoly.show_property(gobind.position)
+print(gobind.position)
+
+print("\nJoi:")
+joi.move_token()
+monopoly.show_property(joi.position)
+print(joi.position)
+
+print("\nGobind:")
+gobind.move_token()
+monopoly.show_property(gobind.position)
+print(gobind.position)
 
 
 # Pass Go and collect $200 from the bank

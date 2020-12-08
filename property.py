@@ -1,4 +1,3 @@
-
 class Property:
     def __init__(self, name, color, rent):
         """Each property has a name, a color denoting its group, and a base rent value."""
@@ -9,16 +8,16 @@ class Property:
         self.owned = False #Ownership status
         self.buildings = 0
 
-    def buy_property(self):
+    def buy_property(self, player):
         """Change ownership status to True when buying property."""
         self.owned = True
 
-    def sell_property(self):
+    def sell_property(self, player):
         """Change ownership status to False when selling property."""
         self.owned = False
     
     def update_rent(self, buy = True):
-        """Double the rent if buying a property, otherwise halve the rent if selling."""
+        """Double the rent if adding a building, otherwise halve the rent if removing."""
         if buy:
             self.rent *= 2
         else:

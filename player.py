@@ -49,6 +49,6 @@ class Player(Actor):
             self.position %= 22
         # If double roll (dice show same value), roll again by calling this function (recursion)
         if roll[0] == roll[1]:
-            self.move_token()
+            self.move_token() 
 
     
