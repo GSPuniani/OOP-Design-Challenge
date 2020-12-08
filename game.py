@@ -47,8 +47,28 @@ print(joi.position)
 
 print("\nGobind:")
 gobind.move_token()
-monopoly.show_property(gobind.position)
+# Buy the property
+gobind_purchase1 = monopoly.show_property(gobind.position)
+gobind_purchase1.buy_property(gobind)
+gobind.pay(bank, gobind_purchase1.price)
 print(gobind.position)
+print("Gobind's properties:")
+for prop in gobind.properties:
+    print(prop.name)
+
+print(f"Joi's balance: {joi.balance}")
+print(f"Gobind's balance: {gobind.balance}")
+
+# Put a house on the property
+bank.sell_building(gobind)
+gobind_purchase1.add_building()
+print(f"Gobind's balance: {gobind.balance}")
+# Collect rent from Joi
+gobind.collect(joi, gobind_purchase1.rent)
+
+print(f"Joi's balance: {joi.balance}")
+print(f"Gobind's balance: {gobind.balance}")
+
 
 print("\nJoi:")
 joi.move_token()
@@ -79,16 +99,21 @@ print("\nGobind:")
 gobind.move_token()
 monopoly.show_property(gobind.position)
 print(gobind.position)
-
-print("\nJoi:")
-joi.move_token()
-monopoly.show_property(joi.position)
-print(joi.position)
-
-print("\nGobind:")
-gobind.move_token()
-monopoly.show_property(gobind.position)
-print(gobind.position)
-
 
 # Pass Go and collect $200 from the bank
+joi.collect(bank, 200)
+print(f"Joi's balance: {joi.balance}")
+gobind.collect(bank, 200)
+print(f"Gobind's balance: {gobind.balance}")
+
+print("\nJoi:")
+joi.move_token()
+monopoly.show_property(joi.position)
+print(joi.position)
+
+print("\nGobind:")
+gobind.move_token()
+monopoly.show_property(gobind.position)
+print(gobind.position)
+
+

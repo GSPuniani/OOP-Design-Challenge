@@ -11,10 +11,14 @@ class Property:
     def buy_property(self, player):
         """Change ownership status to True when buying property."""
         self.owned = True
+        # Add the property to the buying player's list of properties
+        player.properties.append(self)
 
     def sell_property(self, player):
         """Change ownership status to False when selling property."""
         self.owned = False
+        # Remove the property from the buying player's list of properties
+        player.properties.remove(self)
     
     def update_rent(self, buy = True):
         """Double the rent if adding a building, otherwise halve the rent if removing."""

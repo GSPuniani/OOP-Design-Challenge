@@ -10,6 +10,7 @@ class Player(Actor):
         super().__init__(1500)
         self.token = token
         self.position = 0
+        self.properties = []
 
     # The collect() and pay() methods from Actor are also inherited
     
