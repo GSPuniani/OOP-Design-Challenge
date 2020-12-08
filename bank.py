@@ -11,7 +11,7 @@ class Bank(Actor):
         
     # The collect() and pay() methods from Actor are also inherited
 
-    def sell_property(self, other, building = "house"):
+    def sell_building(self, other, building = "house"):
         """Sell some number of houses or hotels to a player.
         Inputs are player and property type (house or hotel) as a string.
         Each house/hotel costs $100, but a hotel also requires 4 houses from that property and are traded in."""

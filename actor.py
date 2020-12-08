@@ -22,5 +22,5 @@ class Actor(ABC):
 
     # Banks and players have their own versions of sell_property()
     @abstractmethod
-    def sell_property(self):
+    def sell_building(self):
         pass

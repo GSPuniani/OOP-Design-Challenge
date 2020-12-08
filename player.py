@@ -20,7 +20,7 @@ class Player(Actor):
         if die1 == die2:
             print("Doubles!")
 
-    def sell_property(self, other, building = "house"):
+    def sell_building(self, other, building = "house"):
         """Sell some number of houses or hotels back to the bank.
         Inputs are player and property type (house or hotel) as a string.
         Each house/hotel costs $100, but the bank only buys them back at half-value."""
